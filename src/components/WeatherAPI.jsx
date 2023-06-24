@@ -1,4 +1,3 @@
-const API_KEY = 'your_api_key';
 
 const getWeatherData = async (location) => {
   try {
