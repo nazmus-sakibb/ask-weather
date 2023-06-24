@@ -7,10 +7,10 @@ const CurrentWeather = ({data, isLoading}) => {
             <p>{data.name}</p>
           </div>
           <div className="temp">
-            {isLoading ? <p>Loading...</p> : <h1>{data.main.temp.toFixed()}°F</h1>}
+            {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null}
           </div>
           <div className="description">
-            {isLoading ? <p>Loading...</p> : <p>{data.weather[0].main}</p>}
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
     );

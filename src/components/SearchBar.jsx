@@ -1,5 +1,4 @@
 
-
 const SearchBar = (props) => {
     // eslint-disable-next-line react/prop-types
     const {location, setLocation, searchLocation} = props;
