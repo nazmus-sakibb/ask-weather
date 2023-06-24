@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import CurrentWeather from "./components/CurrentWeather";
+import Forecast from "./components/Forecast";
 
 const App = () => {
   const [data, setData] = useState({});
@@ -16,7 +17,6 @@ const App = () => {
       axios.get(url)
         .then((response) => {
           setData(response.data);
-          console.log(response.data);
         })
         .catch((error) => {
           console.error('Error fetching weather data:', error);
@@ -37,22 +37,8 @@ const App = () => {
           <p>Loading...</p> // Render loading indicators when data is being fetched
         ) : (
           <>
-            <CurrentWeather data={data} isLoading={isLoading} />
-            <div className="bottom">
-              {/* Render additional components when data is available */}
-              <div className="feels">
-                {data.main && <p className="bold">{data.main.feels_like.toFixed()}°C</p>}
-                <p>Feels Like</p>
-              </div>
-              <div className="humidity">
-                {data.main && <p className="bold">{data.main.humidity}%</p>}
-                <p>Humidity</p>
-              </div>
-              <div className="wind">
-                {data.wind && <p className="bold">{data.wind.speed.toFixed()} MPH</p>}
-                <p>Wind Speed</p>
-              </div>
-            </div>
+            <CurrentWeather data={data} />
+            <Forecast data={data} />
           </>
         )}
       </div>

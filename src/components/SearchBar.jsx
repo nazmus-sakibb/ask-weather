@@ -1,7 +1,6 @@
+/* eslint-disable react/prop-types */
 
-const SearchBar = (props) => {
-    // eslint-disable-next-line react/prop-types
-    const {location, setLocation, searchLocation} = props;
+const SearchBar = ({location, setLocation, searchLocation}) => {
 
     return (
         <div className="search">
