@@ -31,9 +31,7 @@ Ask Weather is a weather forecast application built with React. It allows users 
 
 The application is deployed and can be accessed live at [https://ask-weather1.netlify.app/](https://ask-weather1.netlify.app/).
 
-## Screenshots
 
-![Ask Weather Screenshot](screenshots/screenshot.png)
 
 
 
